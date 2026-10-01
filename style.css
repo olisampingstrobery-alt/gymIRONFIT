@@ -1,0 +1,53 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111317;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Hero section background overlay */
+.hero-bg {
+    background-image: linear-gradient(to right, rgba(17, 19, 23, 0.95) 0%, rgba(17, 19, 23, 0.7) 50%, rgba(17, 19, 23, 0.3) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Call to Action section background */
+.cta-bg {
+    background-image: linear-gradient(to right, rgba(17, 19, 23, 0.9), rgba(17, 19, 23, 0.8)), url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Utility for hiding scrollbar in horizontal scroll areas if needed */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Smooth scrolling + offset biar ketutup navbar fixed */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+section, header, footer {
+    scroll-margin-top: 80px;
+}
+
+/* Navbar link */
+.nav-link {
+    color: #D1D5DB;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+.nav-link:hover {
+    color: #FFD147;
+}
+.nav-link.active {
+    color: #FFD147;
+    border-bottom-color: #FFD147;
+}

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronFit - Build Your Strongest Self</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuring Tailwind custom colors and fonts to match the design -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-yellow': '#FFD147',
+                        'brand-dark': '#111317',
+                        'brand-gray': '#1E2024',
+                        'brand-light-gray': '#2A2C31',
+                        'brand-text-gray': '#A0A3AB',
+                        'section-light': '#F8F9FA'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-sm border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-dumbbell text-brand-yellow text-2xl"></i>
+                    <span class="font-bold text-2xl tracking-tight">IRONFIT</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#beranda" class="nav-link active">Beranda</a>
+                    <a href="#program" class="nav-link">Program</a>
+                    <a href="#membership" class="nav-link">Membership</a>
+                    <a href="#trainer" class="nav-link">Trainer</a>
+                    <a href="#fasilitas" class="nav-link">Fasilitas</a>
+                    <a href="#testimoni" class="nav-link">Testimoni</a>
+                    <a href="#kontak" class="nav-link">Kontak</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <a href="#membership" class="bg-brand-yellow text-brand-dark px-6 py-2 rounded-md font-semibold hover:bg-yellow-400 transition-colors flex items-center gap-2">
+                        Join Now <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="beranda" class="relative pt-20 pb-16 md:pt-32 md:pb-24 hero-bg min-h-[90vh] flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col md:flex-row justify-between items-center">
+            
+            <!-- Hero Content -->
+            <div class="md:w-1/2 space-y-6">
+                <p class="text-brand-yellow font-semibold tracking-wider text-sm uppercase">Make a Better You</p>
+                <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
+                    BUILD YOUR <br>
+                    <span class="text-brand-yellow text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow to-yellow-200">STRONGEST</span> SELF.
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl max-w-md border-l-4 border-brand-yellow pl-4">
+                    Train harder. Feel stronger. Live better.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#membership" class="bg-brand-yellow text-brand-dark px-8 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors flex items-center gap-2">
+                        Join Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#program" class="bg-transparent border border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors">
+                        Lihat Program
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex gap-8 pt-8 border-t border-white/10 mt-8">
+                    <div>
+                        <p class="text-3xl font-bold text-brand-yellow">500+</p>
+                        <p class="text-sm text-gray-400 mt-1">Active Member</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-brand-yellow">10+</p>
+                        <p class="text-sm text-gray-400 mt-1">Profesional Trainer</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-brand-yellow">4.9</p>
+                        <p class="text-sm text-gray-400 mt-1">Rating Member</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Card (Right Side) -->
+            <div class="hidden md:block absolute right-8 top-1/3 transform -translate-y-1/2">
+                 <p class="text-brand-yellow font-handwriting text-3xl transform rotate-12 mb-4 drop-shadow-lg" style="font-family: 'Brush Script MT', cursive;">DISCIPLINE BUILDS RESULTS</p>
+            </div>
+
+            <div class="mt-12 md:mt-0 md:absolute right-8 bottom-12 bg-brand-gray/80 backdrop-blur-md p-5 rounded-2xl border border-white/10 max-w-xs shadow-2xl">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="bg-brand-yellow/20 p-2 rounded-lg">
+                        <i class="fa-solid fa-dumbbell text-brand-yellow"></i>
+                    </div>
+                    <p class="font-bold text-sm leading-tight">Mulai<br>Perjalanan Fitness<br>Bersama Kami</p>
+                </div>
+                <div class="flex -space-x-2">
+                    <img class="w-8 h-8 rounded-full border-2 border-brand-gray object-cover object-top" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Chris_Bumstead_on_Gymshark.jpg" alt="CBum - Chris Bumstead" title="CBum">
+                    <img class="w-8 h-8 rounded-full border-2 border-brand-gray object-cover object-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/David_Laid_thirst_tweets_video_for_Gymshark_2021_03_%28cropped%29.jpg/250px-David_Laid_thirst_tweets_video_for_Gymshark_2021_03_%28cropped%29.jpg" alt="David Laid" title="David Laid">
+                    <img class="w-8 h-8 rounded-full border-2 border-brand-gray object-cover object-top" src="https://fitnessvolt.com/wp-content/uploads/2023/09/sam-sulek-profile.jpg" alt="Sam Sulek" title="Sam Sulek">
+                    <div class="w-8 h-8 rounded-full border-2 border-brand-gray bg-brand-light-gray flex items-center justify-center text-xs font-bold text-gray-300">+</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Programs Section -->
+    <section id="program" class="py-20 bg-brand-dark border-t border-white/5 relative overflow-hidden">
+        <!-- Background decorative element -->
+        <div class="absolute left-0 top-0 w-64 h-64 bg-brand-yellow/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <p class="text-brand-yellow font-semibold tracking-wider text-xs uppercase mb-2">Program Latihan Kami</p>
+                    <h2 class="text-3xl md:text-4xl font-bold">Program untuk <span class="text-brand-yellow">Setiap Tujuanmu</span></h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <p class="text-brand-text-gray text-sm max-w-sm hidden md:block">
+                        Pilih program yang sesuai dengan kebutuhan dan target fitness kamu. Didampingi oleh trainer profesional.
+                    </p>
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center hover:bg-yellow-400 transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-gray to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&auto=format&fit=crop" alt="Strength Training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20 -mt-8">
+                        <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center mb-4 border border-white/10 text-brand-yellow">
+                            <i class="fa-solid fa-dumbbell text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Strength Training</h3>
+                        <p class="text-brand-text-gray text-sm mb-6 line-clamp-2">Meningkatkan kekuatan dan membentuk otot tubuh secara menyeluruh.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium border border-white/20 rounded-lg px-4 py-2 hover:bg-white/5 transition">
+                            Lihat Program <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-gray to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1434596922112-19c563067271?w=500&auto=format&fit=crop" alt="Cardio Training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20 -mt-8">
+                        <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center mb-4 border border-white/10 text-brand-yellow">
+                            <i class="fa-solid fa-person-running text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Cardio Training</h3>
+                        <p class="text-brand-text-gray text-sm mb-6 line-clamp-2">Meningkatkan stamina, ketahanan, dan kesehatan jantung Anda.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium border border-white/20 rounded-lg px-4 py-2 hover:bg-white/5 transition">
+                            Lihat Program <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-gray to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&auto=format&fit=crop" alt="Weight Loss" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20 -mt-8">
+                        <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center mb-4 border border-white/10 text-brand-yellow">
+                            <i class="fa-solid fa-fire text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Weight Loss</h3>
+                        <p class="text-brand-text-gray text-sm mb-6 line-clamp-2">Program khusus untuk membakar lemak dan menurunkan berat badan.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium border border-white/20 rounded-lg px-4 py-2 hover:bg-white/5 transition">
+                            Lihat Program <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/5">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-gray to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&auto=format&fit=crop" alt="Personal Training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20 -mt-8">
+                        <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center mb-4 border border-white/10 text-brand-yellow">
+                            <i class="fa-solid fa-user-ninja text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Personal Training</h3>
+                        <p class="text-brand-text-gray text-sm mb-6 line-clamp-2">Latihan lebih efektif dengan bimbingan dan fokus trainer profesional 1-on-1.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium border border-white/20 rounded-lg px-4 py-2 hover:bg-white/5 transition">
+                            Lihat Program <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="py-20 bg-[#15171C] relative">
+        <!-- Abstract shape -->
+        <div class="absolute left-0 top-1/4 w-32 h-64 bg-brand-yellow opacity-10 blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <!-- Membership Header -->
+                <div class="lg:w-1/3">
+                    <p class="text-brand-yellow font-semibold tracking-wider text-xs uppercase mb-2">Membership</p>
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Pilih Paket <br><span class="text-brand-yellow">Membership</span></h2>
+                    <p class="text-brand-text-gray mb-8 max-w-sm">
+                        Mulai perjalanan fitness kamu dengan paket yang fleksibel dan terjangkau. Tidak ada biaya tersembunyi.
+                    </p>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                    
+                    <!-- Basic Plan -->
+                    <div class="bg-brand-gray rounded-2xl p-8 border border-white/10 flex flex-col hover:border-white/20 transition-colors">
+                        <h3 class="text-xl font-semibold mb-2">Basic</h3>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold">Rp 150.000</span>
+                            <span class="text-brand-text-gray text-sm"> / bulan</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Akses area gym
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Semua alat fitness
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Locker
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 rounded-lg border border-white/20 font-medium hover:bg-white/5 transition-colors">
+                            Pilih Paket
+                        </button>
+                    </div>
+
+                    <!-- Pro Plan (Highlighted) -->
+                    <div class="bg-brand-gray rounded-2xl p-8 border-2 border-brand-yellow relative flex flex-col transform md:-translate-y-4 shadow-[0_0_30px_rgba(255,209,71,0.15)] z-10">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-yellow text-brand-dark px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+                            <i class="fa-solid fa-fire text-[10px]"></i> POPULER
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-yellow">Pro</h3>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold">Rp 250.000</span>
+                            <span class="text-brand-text-gray text-sm"> / bulan</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                                Akses area gym
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                                Kelas group training
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                                Locker & shower
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                <i class="fa-solid fa-circle-check text-brand-yellow mt-1"></i>
+                                Konsultasi program
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 rounded-lg bg-brand-yellow text-brand-dark font-bold hover:bg-yellow-400 transition-colors shadow-lg">
+                            Pilih Paket
+                        </button>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="bg-brand-gray rounded-2xl p-8 border border-white/10 flex flex-col hover:border-white/20 transition-colors">
+                        <h3 class="text-xl font-semibold mb-2">Premium</h3>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold">Rp 400.000</span>
+                            <span class="text-brand-text-gray text-sm"> / bulan</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Semua fasilitas Pro
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Personal trainer 2x/bulan
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Nutrisi & meal plan
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300">
+                                <i class="fa-regular fa-circle-check text-brand-yellow mt-1"></i>
+                                Akses kelas premium
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 rounded-lg border border-white/20 font-medium hover:bg-white/5 transition-colors">
+                            Pilih Paket
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section (Switches to light theme) -->
+    <section id="trainer" class="py-20 bg-section-light text-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <p class="text-gray-500 font-semibold tracking-wider text-xs uppercase mb-2">Meet Our Trainers</p>
+                    <h2 class="text-3xl md:text-4xl font-bold leading-tight">Trainer Profesional <br>Siap Membimbingmu</h2>
+                    <p class="text-gray-600 text-sm mt-4 max-w-md">
+                        Dapatkan arahan langsung dari trainer berpengalaman dan bersertifikat internasional.
+                    </p>
+                </div>
+                <div>
+                    <button class="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+                        Lihat Semua Trainer <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trainer Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Trainer 1 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=500&auto=format&fit=crop" alt="Raka Pratama" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-5 text-white">
+                        <h3 class="font-bold text-lg">Raka Pratama</h3>
+                        <p class="text-gray-300 text-xs mb-3">Strength & Muscle Building</p>
+                        <div class="flex gap-2 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&auto=format&fit=crop" alt="Salsa Anggraini" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-5 text-white">
+                        <h3 class="font-bold text-lg">Salsa Anggraini</h3>
+                        <p class="text-gray-300 text-xs mb-3">Fat Loss & Body Toning</p>
+                        <div class="flex gap-2 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=500&auto=format&fit=crop" alt="Dimas Hizkia" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-5 text-white">
+                        <h3 class="font-bold text-lg">Dimas Hizkia</h3>
+                        <p class="text-gray-300 text-xs mb-3">Functional Training</p>
+                        <div class="flex gap-2 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 4 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&auto=format&fit=crop&q=80" alt="Nadia Putri - Yoga Trainer" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-5 text-white">
+                        <h3 class="font-bold text-lg">Nadia Putri</h3>
+                        <p class="text-gray-300 text-xs mb-3">Yoga & Flexibility</p>
+                        <div class="flex gap-2 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="fasilitas" class="py-20 bg-white text-brand-dark border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Facilities Content -->
+                <div class="lg:w-5/12 space-y-6">
+                    <div>
+                        <p class="text-gray-500 font-semibold tracking-wider text-xs uppercase mb-2">Fasilitas Lengkap</p>
+                        <h2 class="text-3xl md:text-4xl font-bold leading-tight">Dukung Perjalanan <br>Fitness Kamu</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-8 pt-6">
+                        <!-- Facility Item -->
+                        <div class="flex flex-col gap-3 relative">
+                            <!-- Decorative dot -->
+                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-brand-yellow rounded-full"></div>
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200">
+                                <i class="fa-solid fa-dumbbell text-gray-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Equipment Lengkap</h4>
+                                <p class="text-xs text-gray-500 mt-1">Alat modern dan terawat</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Facility Item -->
+                        <div class="flex flex-col gap-3 relative">
+                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-brand-yellow rounded-full"></div>
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200">
+                                <i class="fa-solid fa-shower text-gray-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Locker & Shower</h4>
+                                <p class="text-xs text-gray-500 mt-1">Nyaman dan bersih</p>
+                            </div>
+                        </div>
+
+                        <!-- Facility Item -->
+                        <div class="flex flex-col gap-3 relative">
+                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-brand-yellow rounded-full"></div>
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200">
+                                <i class="fa-regular fa-snowflake text-gray-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Ruang Ber-AC</h4>
+                                <p class="text-xs text-gray-500 mt-1">Latihan lebih nyaman</p>
+                            </div>
+                        </div>
+
+                        <!-- Facility Item -->
+                        <div class="flex flex-col gap-3 relative">
+                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-brand-yellow rounded-full"></div>
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200">
+                                <i class="fa-solid fa-square-parking text-gray-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Area Parkir Luas</h4>
+                                <p class="text-xs text-gray-500 mt-1">Aman dan gratis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facilities Images Gallery -->
+                <div class="lg:w-7/12 grid grid-cols-3 gap-4 relative">
+                    <div class="col-span-2 h-64 rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&auto=format&fit=crop" alt="Gym Area" class="w-full h-full object-cover">
+                    </div>
+                    <div class="col-span-1 h-64 rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=400&auto=format&fit=crop" alt="Locker Room" class="w-full h-full object-cover">
+                    </div>
+                    <div class="col-span-1 h-40 rounded-2xl overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=400&auto=format&fit=crop&q=80" alt="Cardio Area" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e38?w=400&auto=format&fit=crop&q=80';">
+                    </div>
+                    <div class="col-span-2 h-40 rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop" alt="Weight Area" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Floating Card on Gallery -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4 w-[280px]">
+                        <div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-brand-dark">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <p class="text-xs font-medium text-gray-800 leading-snug">Suasana gym yang<br>nyaman dan modern</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-20 bg-section-light text-brand-dark border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <p class="text-gray-500 font-semibold tracking-wider text-xs uppercase mb-2">Testimoni Member</p>
+                    <h2 class="text-3xl md:text-4xl font-bold">Apa Kata Mereka?</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 hover:text-brand-dark transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center hover:bg-gray-800 transition">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Testimonial Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://i.pravatar.cc/150?img=33" alt="Ahmad Fauzi" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm">Ahmad Fauzi</h4>
+                            <p class="text-[10px] text-gray-500">Member sejak 2024</p>
+                            <div class="flex gap-1 text-brand-yellow text-[10px] mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">
+                        "Tempatnya nyaman, alatnya lengkap, trainernya juga ramah dan profesional. Hasilnya benar-benar terasa setelah 3 bulan rutin."
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://i.pravatar.cc/150?img=47" alt="Sinta Maharani" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm">Sinta Maharani</h4>
+                            <p class="text-[10px] text-gray-500">Member sejak 2023</p>
+                            <div class="flex gap-1 text-brand-yellow text-[10px] mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">
+                        "Program latihan di sini sangat membantu aku mencapai target berat badan ideal. Komunitasnya juga supportif banget. Highly recommended!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Bima Santoso" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm">Bima Santoso</h4>
+                            <p class="text-[10px] text-gray-500">Member sejak 2024</p>
+                            <div class="flex gap-1 text-brand-yellow text-[10px] mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">
+                        "Fasilitas lengkap, suasana gymnya keren, dan staff-nya sangat membantu. Kelas groupnya seru-seru. Best gym in town!"
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-20 cta-bg relative overflow-hidden text-center flex items-center justify-center">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-brand-dark/80 mix-blend-multiply"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-black mb-6">
+                READY TO <span class="text-brand-yellow">TRANSFORM</span> YOURSELF?
+            </h2>
+            <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                Mulai latihan hari ini dan capai versi terbaik dari dirimu. Daftar sekarang dan dapatkan penawaran khusus member baru.
+            </p>
+            <button class="bg-brand-yellow text-brand-dark px-10 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors inline-flex items-center gap-2 shadow-xl shadow-brand-yellow/20">
+                Join Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <!-- Abstract yellow shapes -->
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-brand-yellow/20 transform rotate-45 translate-x-1/2 translate-y-1/2 blur-2xl"></div>
+        <div class="absolute top-0 left-0 w-40 h-40 bg-brand-yellow/10 transform rotate-45 -translate-x-1/2 -translate-y-1/2 blur-xl"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-brand-dark border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-dumbbell text-brand-yellow text-2xl"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">IRONFIT</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Pusat kebugaran modern dengan fasilitas lengkap dan trainer profesional untuk membantu Anda mencapai body goals.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-gray flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:bg-white/10 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-gray flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:bg-white/10 transition"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-gray flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:bg-white/10 transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#beranda" class="hover:text-brand-yellow transition">Beranda</a></li>
+                        <li><a href="#program" class="hover:text-brand-yellow transition">Program Latihan</a></li>
+                        <li><a href="#membership" class="hover:text-brand-yellow transition">Paket Membership</a></li>
+                        <li><a href="#trainer" class="hover:text-brand-yellow transition">Trainer Kami</a></li>
+                        <li><a href="#fasilitas" class="hover:text-brand-yellow transition">Fasilitas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-yellow transition">Personal Training</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">Group Classes</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">Konsultasi Nutrisi</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition">Body Assessment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-yellow"></i>
+                            <span>Jl. Jendral Sudirman No. 123,<br>Jakarta Selatan, 12190</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-yellow"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-yellow"></i>
+                            <span>hello@ironfit.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 IronFit Gym. All rights reserved.
+                </p>
+                <div class="flex gap-4 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
